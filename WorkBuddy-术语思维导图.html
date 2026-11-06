@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WorkBuddy 术语思维导图 · 专家 / 技能 / 连接器 / MCP</title>
+<style>
+  :root{
+    --ink:#2C2C2A;
+    --ink-2:#5F5E5A;
+    --ink-3:#888780;
+    --paper:#F7F6F2;
+    --card:#FFFFFF;
+    --line:#E4E2D9;
+    --purple:#534AB7;
+    --purple-deep:#3C3489;
+    --purple-soft:#EEEDFE;
+    --blue:#185FA5;
+    --blue-deep:#0C447C;
+    --blue-soft:#E6F1FB;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,"Segoe UI",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:920px;margin:0 auto;padding:64px 32px 80px;}
+
+  .eyebrow{
+    font-size:12px;letter-spacing:.18em;color:var(--ink-3);
+    margin:0 0 18px;text-transform:uppercase;
+  }
+  h1{
+    font-size:32px;line-height:1.35;font-weight:600;letter-spacing:-.01em;
+    margin:0 0 18px;
+  }
+  h1 em{font-style:normal;color:var(--purple);}
+  .lead{
+    font-size:15.5px;line-height:1.9;color:var(--ink-2);
+    margin:0 0 40px;max-width:38em;
+  }
+  .lead strong{color:var(--ink);font-weight:600;}
+
+  h2{
+    font-size:15px;font-weight:600;letter-spacing:.02em;
+    margin:56px 0 20px;padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+    color:var(--ink);
+  }
+  h2 span{color:var(--ink-3);font-weight:400;font-size:13px;margin-left:10px;letter-spacing:0;}
+
+  .map-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:26px 24px 20px;
+  }
+  .map-card svg{display:block;width:100%;height:auto;}
+
+  table{
+    width:100%;border-collapse:collapse;font-size:14.5px;line-height:1.65;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  }
+  thead th{
+    text-align:left;font-weight:600;font-size:12.5px;letter-spacing:.06em;
+    color:var(--ink-3);background:#FBFAF6;
+    padding:12px 16px;border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+  tbody td{padding:16px;vertical-align:top;border-bottom:1px solid #F0EEE6;color:var(--ink-2);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody td:first-child{color:var(--ink);font-weight:600;white-space:nowrap;}
+  tbody td:nth-child(3){color:var(--ink);}
+
+  ol.rules{list-style:none;counter-reset:r;margin:0;padding:0;}
+  ol.rules li{
+    counter-increment:r;position:relative;
+    padding:0 0 22px 44px;font-size:15px;line-height:1.8;color:var(--ink-2);
+  }
+  ol.rules li::before{
+    content:counter(r);
+    position:absolute;left:0;top:2px;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--purple-soft);color:var(--purple-deep);
+    font-size:13px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  ol.rules li b{color:var(--ink);font-weight:600;}
+
+  .memo{
+    margin:8px 0 0;padding:26px 28px;border-radius:14px;
+    background:linear-gradient(0deg,#FBFAF6,#FBFAF6);
+    border:1px solid var(--line);border-left:3px solid var(--purple);
+  }
+  .memo .k{font-size:12px;letter-spacing:.16em;color:var(--ink-3);margin:0 0 10px;}
+  .memo p{margin:0;font-size:18px;line-height:1.85;letter-spacing:.01em;color:var(--ink);font-weight:500;}
+  .memo .case{margin:14px 0 0;font-size:14.5px;line-height:1.85;color:var(--ink-2);font-weight:400;letter-spacing:0;}
+
+  footer{
+    margin-top:56px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--ink-3);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+
+  @media (max-width:640px){
+    .page{padding:40px 20px 56px;}
+    h1{font-size:25px;}
+    .lead{font-size:14.5px;}
+    table{font-size:13px;}
+    thead th,tbody td{padding:10px 12px;}
+    .memo p{font-size:16px;}
+  }
+  @media print{
+    body{background:#fff;}
+    .page{max-width:none;padding:0;}
+    .map-card,table{break-inside:avoid;}
+    h2{break-after:avoid;}
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <p class="eyebrow">Glossary · 术语速览</p>
+  <h1>WorkBuddy 的四个词：<em>专家</em>、技能、连接器、MCP</h1>
+  <p class="lead">
+    它们不是并列的四个功能，而是<strong>从四个角度扩展同一个 AI 员工</strong>——
+    谁来做（立场）、按什么流程做、能拿到什么数据、用什么规格把数据接进来。
+    换成一家公司的话说：请顾问、发手册、给门禁卡、定插座标准。
+  </p>
+
+  <h2>全景图 <span>上半区＝自身装备，下半区＝对外接口</span></h2>
+  <div class="map-card">
+    <svg viewBox="0 0 900 560" role="img" aria-label="WorkBuddy 四个术语思维导图">
+      <title>WorkBuddy 能力扩展思维导图</title>
+      <desc>中心为 WorkBuddy，向左右分四支：左上专家、右上技能（自身装备），左下连接器、右下 MCP（对外接口）。</desc>
+
+      <path d="M330 288 L250 288 L250 142 L340 142" fill="none" stroke="#B4B2A9" stroke-width="1"/>
+      <path d="M330 288 L250 288 L250 438 L340 438" fill="none" stroke="#B4B2A9" stroke-width="1"/>
+      <path d="M570 288 L650 288 L650 142 L560 142" fill="none" stroke="#B4B2A9" stroke-width="1"/>
+      <path d="M570 288 L650 288 L650 438 L560 438" fill="none" stroke="#B4B2A9" stroke-width="1"/>
+
+      <rect x="330" y="250" width="240" height="76" rx="14" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+      <text x="450" y="278" text-anchor="middle" font-size="17" font-weight="600" fill="#2C2C2A">WorkBuddy 能力扩展</text>
+      <text x="450" y="302" text-anchor="middle" font-size="13" fill="#5F5E5A">四个最常被问到的名词</text>
+
+      <rect x="40" y="60" width="300" height="165" rx="14" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+      <text x="62" y="90" font-size="17" font-weight="600" fill="#3C3489">专家 / 专家团</text>
+      <text x="62" y="114" font-size="13" fill="#534AB7">谁来做：换立场和判断标准</text>
+      <text x="62" y="144" font-size="13" fill="#444441">· 封装身份＋方法论＋标准</text>
+      <text x="62" y="167" font-size="13" fill="#444441">· 一次只能启用一位</text>
+      <text x="62" y="190" font-size="13" fill="#444441">· 专家团＝多位专家接力</text>
+      <text x="62" y="213" font-size="13" fill="#444441">· 入口：左侧「专家」</text>
+
+      <rect x="560" y="60" width="300" height="165" rx="14" fill="#EEEDFE" stroke="#534AB7" stroke-width="1"/>
+      <text x="582" y="90" font-size="17" font-weight="600" fill="#3C3489">技能 Skill</text>
+      <text x="582" y="114" font-size="13" fill="#534AB7">怎么做：一份可执行的作业手册</text>
+      <text x="582" y="144" font-size="13" fill="#444441">· 步骤、模板、排版规范</text>
+      <text x="582" y="167" font-size="13" fill="#444441">· 内置一批，也能自己装</text>
+      <text x="582" y="190" font-size="13" fill="#444441">· 例：Word、PPT、读 PDF</text>
+      <text x="582" y="213" font-size="13" fill="#444441">· 本质：说明文档＋脚本</text>
+
+      <rect x="40" y="355" width="300" height="165" rx="14" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+      <text x="62" y="385" font-size="17" font-weight="600" fill="#0C447C">连接器 Connector</text>
+      <text x="62" y="409" font-size="13" fill="#185FA5">拿什么数据：通往外部系统的门禁卡</text>
+      <text x="62" y="439" font-size="13" fill="#444441">· 邮箱、腾讯文档、企查查</text>
+      <text x="62" y="462" font-size="13" fill="#444441">· 必须你亲自授权</text>
+      <text x="62" y="485" font-size="13" fill="#444441">· 不连＝那套数据看不见</text>
+      <text x="62" y="508" font-size="13" fill="#444441">· 随时可以断开</text>
+
+      <rect x="560" y="355" width="300" height="165" rx="14" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+      <text x="582" y="385" font-size="17" font-weight="600" fill="#0C447C">MCP</text>
+      <text x="582" y="409" font-size="13" fill="#185FA5">怎么接：接口的「统一插座规格」</text>
+      <text x="582" y="439" font-size="13" fill="#444441">· 一套开放的接口协议</text>
+      <text x="582" y="462" font-size="13" fill="#444441">· 一个连接器≈一个 MCP 服务</text>
+      <text x="582" y="485" font-size="13" fill="#444441">· 写进配置还要点「信任」</text>
+      <text x="582" y="508" font-size="13" fill="#444441">· 任何系统都能插得上</text>
+    </svg>
+  </div>
+
+  <h2>逐条对照</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:16%">名词</th>
+        <th style="width:38%">通俗解释</th>
+        <th style="width:20%">类比</th>
+        <th style="width:26%">什么场景才用</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>专家 / 专家团</td>
+        <td>预先封装好的一套「专业身份＋方法论＋判断标准」，让 AI 以某个行业的视角干活。专家团是几位专家按顺序接力，一个分析另一个复核。</td>
+        <td>请一位外部顾问，一次只请一位（或一个顾问组）</td>
+        <td>需要专业判断：投资分析、法务审查、教学设计</td>
+      </tr>
+      <tr>
+        <td>技能 Skill</td>
+        <td>一份可执行的作业手册：操作步骤、模板、排版规范、工具用法。加载之后我就照着手册做。</td>
+        <td>员工上岗前拿到的 SOP 手册</td>
+        <td>要出成品时：做 PPT、排 Word、读 PDF、写小程序</td>
+      </tr>
+      <tr>
+        <td>连接器 Connector</td>
+        <td>通往外部系统的一把钥匙，让 AI 能读你账户里的邮箱、腾讯文档、企查查、CRM。</td>
+        <td>门禁卡 / 数据管道</td>
+        <td>要动「你的数据」时才需要，而不是我脑子里的通用知识</td>
+      </tr>
+      <tr>
+        <td>MCP</td>
+        <td>一套开放的「插座标准」，规定外部系统该用什么方式把工具和数据递给 AI。</td>
+        <td>USB 接口标准，不是某根具体的线</td>
+        <td>想把学校或公司的内部系统接进来时</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>三个最容易混的界线</h2>
+  <ol class="rules">
+    <li><b>专家 ≠ 技能。</b>专家换的是「脑子」——用谁的立场判断、按什么行业标准衡量；技能换的是「手」——按哪套步骤、模板、规范执行。同一个专家可以配不同技能。</li>
+    <li><b>连接器 ≠ MCP。</b>连接器是具体的插头（邮箱插头、腾讯文档插头），MCP 是插座的规格标准。你装的连接器很可能就是一个 MCP 服务，但 MCP 本身不是服务，是协议。</li>
+    <li><b>不用全配。</b>只写文档，技能就够了；要读你自己的邮箱，才需要连接器；要接内部系统，才轮到 MCP；要专业判断，才请专家。缺什么补什么。</li>
+  </ol>
+
+  <div class="memo">
+    <p class="k">一句话记住</p>
+    <p>专家定立场，技能定流程，连接器给数据，MCP 定接口。</p>
+    <p class="case">串起来说：以投资顾问（<b>专家</b>）的身份，按研报格式（<b>技能</b>）写一份分析，数据从你邮箱里的财报邮件（<b>连接器</b>）里取——这句话就把四个词都用上了。</p>
+  </div>
+
+  <footer>
+    <span>WorkBuddy 术语速览 · 2026-11-06</span>
+    <span>专家 · 技能 · 连接器 · MCP</span>
+  </footer>
+
+</main>
+</body>
+</html>
